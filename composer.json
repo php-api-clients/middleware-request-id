@@ -1,0 +1,87 @@
+{
+  "name": "api-clients/middleware-request-id",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Cees-Jan Kiewiet",
+      "email": "ceesjank@gmail.com"
+    },
+    {
+      "name": "Mateusz Drost",
+      "email": "mat.drost@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.0",
+    "api-clients/middleware": "^2.0",
+    "psr/http-message": "^1.0",
+    "ramsey/uuid": "^3.6"
+  },
+  "require-dev": {
+    "api-clients/test-utilities": "^3.0.1",
+    "clue/block-react": "^1.1",
+    "ringcentral/psr7": "^1.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "ApiClients\\Middleware\\RequestId\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ApiClients\\Tests\\Middleware\\RequestId\\": "tests/"
+    }
+  },
+  "config": {
+    "sort-packages": true,
+    "platform": {
+      "php": "7.0"
+    }
+  },
+  "scripts": {
+    "ensure-installed": "composer install --ansi -n -q",
+    "lint-php": [
+      "@ensure-installed",
+      "parallel-lint --exclude vendor ."
+    ],
+    "cs": [
+      "@ensure-installed",
+      "phpcs --standard=PSR2 src/"
+    ],
+    "unit": [
+      "@ensure-installed",
+      "phpunit --colors=always -c phpunit.xml.dist"
+    ],
+    "unit-coverage": [
+      "@ensure-installed",
+      "phpunit --colors=always -c phpunit.xml.dist --coverage-text --coverage-html covHtml --coverage-clover ./build/logs/clover.xml"
+    ],
+    "qa-all": [
+      "@lint-php",
+      "@cs",
+      "@unit"
+    ],
+    "qa-all-coverage": [
+      "@lint-php",
+      "@cs",
+      "@unit-coverage"
+    ],
+    "qa-windows": [
+      "@lint-php",
+      "@cs",
+      "@unit"
+    ],
+    "qa-ci": [
+      "@qa-all-coverage"
+    ],
+    "qa-ci-windows": [
+      "@qa-windows"
+    ],
+    "qa-contrib": [
+      "@qa-all"
+    ],
+    "ci-coverage": [
+      "if [ -f ./build/logs/clover.xml ]; then wget https://scrutinizer-ci.com/ocular.phar && php ocular.phar code-coverage:upload --format=php-clover ./build/logs/clover.xml; fi"
+    ]
+  }
+}
