@@ -2,7 +2,6 @@
 
 namespace ApiClients\Tests\Foundation\Transport\RequestIdStrategy;
 
-use ApiClients\Middleware\RequestId\Options;
 use ApiClients\Middleware\RequestId\RequestIdStrategy\Uuid4Strategy;
 use ApiClients\Tools\TestUtilities\TestCase;
 use Psr\Http\Message\RequestInterface;

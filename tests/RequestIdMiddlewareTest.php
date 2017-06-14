@@ -7,10 +7,10 @@ use ApiClients\Middleware\RequestId\Options;
 use ApiClients\Middleware\RequestId\RequestIdMiddleware;
 use ApiClients\Middleware\RequestId\RequestIdStrategy\Uuid4Strategy;
 use ApiClients\Tools\TestUtilities\TestCase;
-use function Clue\React\Block\await;
 use Ramsey\Uuid\Uuid;
 use React\EventLoop\Factory;
 use RingCentral\Psr7\Request;
+use function Clue\React\Block\await;
 
 final class RequestIdMiddlewareTest extends TestCase
 {

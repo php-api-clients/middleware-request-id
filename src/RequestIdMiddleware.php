@@ -17,8 +17,8 @@ final class RequestIdMiddleware implements MiddlewareInterface
     use ErrorTrait;
 
     /**
-     * @param RequestInterface $request
-     * @param array $options
+     * @param  RequestInterface            $request
+     * @param  array                       $options
      * @return CancellablePromiseInterface
      */
     public function pre(RequestInterface $request, array $options = []): CancellablePromiseInterface
