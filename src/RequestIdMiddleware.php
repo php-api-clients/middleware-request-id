@@ -3,7 +3,6 @@
 namespace ApiClients\Middleware\RequestId;
 
 use ApiClients\Foundation\Middleware\DefaultPriorityTrait;
-use ApiClients\Foundation\Middleware\ErrorTrait;
 use ApiClients\Foundation\Middleware\MiddlewareInterface;
 use ApiClients\Foundation\Middleware\PostTrait;
 use Psr\Http\Message\RequestInterface;
@@ -14,7 +13,6 @@ final class RequestIdMiddleware implements MiddlewareInterface
 {
     use DefaultPriorityTrait;
     use PostTrait;
-    use ErrorTrait;
 
     /**
      * @param  RequestInterface            $request
