@@ -1,5 +1,6 @@
 {
   "name": "api-clients/middleware-request-id",
+  "description": "Middleware adding a request identifier to each request",
   "license": "MIT",
   "authors": [
     {
