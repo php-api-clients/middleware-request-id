@@ -5,4 +5,5 @@ namespace ApiClients\Middleware\RequestId;
 final class Options
 {
     const STRATEGY = 'request_id_strategy';
+    const LENGTH   = 'length';
 }
